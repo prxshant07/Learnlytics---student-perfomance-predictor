@@ -5,7 +5,7 @@ import numpy as np
 from datetime import datetime
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Model baseline data
 TARGET_COLS = {
