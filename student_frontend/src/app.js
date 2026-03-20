@@ -16,7 +16,7 @@ const Learnlytics = () => {
   const [loading, setLoading] = useState(false);
   const [expandedResource, setExpandedResource] = useState(null);
 
-  const API_URL = 'https://learnlytics-student-perfomance-predictor.onrender.com';
+  const API_URL = 'process.env.REACT_APP_API_URL';
 
   const gradeOptions = [
     { id: 'middle_school', name: 'Middle School', icon: '🎒', description: 'Grades 6-8' },
