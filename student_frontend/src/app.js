@@ -16,7 +16,7 @@ const Learnlytics = () => {
   const [loading, setLoading] = useState(false);
   const [expandedResource, setExpandedResource] = useState(null);
 
-  const API_URL = 'http://localhost:5000/api';
+  const API_URL = 'https://learnlytics-student-perfomance-predictor.onrender.com';
 
   const gradeOptions = [
     { id: 'middle_school', name: 'Middle School', icon: '🎒', description: 'Grades 6-8' },
@@ -123,7 +123,7 @@ const Learnlytics = () => {
         alert(data.error || 'Error predicting scores');
       }
     } catch (error) {
-      alert('Error connecting to server. Make sure backend is running at http://localhost:5000');
+      alert('Error connecting to server. Make sure backend is running at https://learnlytics-student-perfomance-predictor.onrender.com');
     } finally {
       setLoading(false);
     }

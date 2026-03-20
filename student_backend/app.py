@@ -191,7 +191,7 @@ def get_subjects(grade_level):
     subjects = [col.replace('_Score', '').replace('_', ' ') for col in TARGET_COLS[grade_level]]
     return jsonify({'subjects': subjects, 'grade_level': grade_level})
 
-@app.route('/api/predict', methods=['POST'])
+@app.route('/predict', methods=['POST'])
 def predict():
     """Predict student performance with enhanced analytics"""
     try:
