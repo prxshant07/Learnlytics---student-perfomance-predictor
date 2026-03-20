@@ -1,0 +1,74 @@
+# ==============================
+# 🔒 Backend (Flask / Python)
+# ==============================
+
+student_backend/node_modules/
+student_backend/venv/
+
+# Virtual environments
+student_backend/venv/
+student_backend/student_env/
+
+# Python cache
+student_backend/pycache/
+*.pyc
+
+# Logs
+.log
+
+# Environment variables
+.env
+.env.
+
+# ==============================
+# 📦 Machine Learning / Data
+# ==============================
+
+# Datasets (VERY IMPORTANT)
+*.csv
+.xlsx
+
+# Optional: ignore large models (keep if needed)
+# .pkl
+# .joblib
+
+# ==============================
+# ⚛️ Frontend (React)
+# ==============================
+
+# Node modules (CRITICAL)
+student_frontend/node_modules/
+
+# Build outputs
+student_frontend/build/
+student_frontend/dist/
+student_frontend/dataconnect/
+
+# Logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# ==============================
+# 💻 System / IDE
+# ==============================
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Mac
+.DS_Store
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+
+# ==============================
+# 🔐 Misc
+# ==============================
+
+*.swp
+*.swo
