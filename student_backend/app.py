@@ -352,4 +352,4 @@ def generate_insights(study_hours, attendance, participation, predictions):
     return insights
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(host='0.0.0.0', port=5000)
