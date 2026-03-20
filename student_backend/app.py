@@ -174,6 +174,10 @@ def predict_score(study_hours, attendance, participation, subject):
     
     return round(predicted, 1)
 
+@app.route("/")
+def home():
+    return jsonify({'message': 'Student Performance Prediction API is running.'})
+
 @app.route('/api/health', methods=['GET'])
 def health_check():
     return jsonify({'status': 'healthy', 'timestamp': datetime.now().isoformat()})
