@@ -70,7 +70,8 @@ const Learnlytics = () => {
     }));
   }, []);
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     if (!formData.study_hours || !formData.attendance || !formData.participation) {
       alert('Please fill in all general metric fields');
       return;
