@@ -1,61 +1,71 @@
-Learnlytics — AI Student Performance Predictor
-
-Learnlytics is an AI-powered full-stack web application that predicts student performance, identifies weak areas, and provides personalized learning recommendations.
+A full-stack machine learning web application that predicts student academic performance and provides personalized insights based on study habits and subject-level metrics.
 
 ⸻
 
-🌟 Features
-	•	📊 Performance Prediction
-	•	Predict scores based on study habits, attendance, and mock tests
-	•	🎯 Weakness Detection
-	•	Automatically identifies subjects requiring attention
-	•	📈 Analytics Dashboard
-	•	Visual comparison of scores vs class average
-	•	Radar and bar chart insights
-	•	📚 Personalized Recommendations
-	•	Curated videos, books, practice platforms, and tips
-	•	🎓 Multi-Level Support
-	•	Middle School
-	•	High School
-	•	University (CSE)
+Live Demo:
+	•	🌐 Frontend: https://learnlytics-student-perfomance-pred.vercel.app
+	•	⚙️ Backend API: https://learnlytics-student-perfomance-predictor.onrender.com
 
 ⸻
 
-🖥️ UI Preview
+Architecture:
 
-🏠 Landing Page
-
-AI-powered platform overview with key features and call-to-action.
-
-🎓 Education Selection
-
-Choose your level (Middle, High School, University)
-
-📝 Input Metrics
-	•	Study Hours
-	•	Attendance
-	•	Class Participation
-	•	Subject-wise test scores
-
-📊 Dashboard
-	•	Overall performance score
-	•	Strong vs weak subjects
-	•	Insights & recommendations
-	•	Graph-based analysis
+React (Vercel)
+↓
+Flask API (Render)
+↓
+ML Model (Scikit-learn / XGBoost)
+↓
+Prediction + Insights
 
 ⸻
 
-🏗️ Tech Stack
+Tech Stack:
 
-🔹 Frontend
+Frontend:
 	•	React.js
-	•	Tailwind CSS
-	•	Chart.js / Recharts (for visualizations)
+	•	Recharts
 
-🔹 Backend
-	•	Python (Flask)
-	•	Machine Learning (Scikit-learn, XGBoost)
+Backend:
+	•	Flask
+	•	Flask-CORS
 
-🔹 Model
-	•	Regression-based prediction model
-	•	Trained on student performance dataset
+Machine Learning:
+	•	Scikit-learn
+	•	XGBoost
+	•	NumPy, Pandas
+
+Deployment:
+	•	Vercel (Frontend)
+	•	Render (Backend)
+
+⸻
+
+Features:
+	•	📈 Predict student performance based on:
+	•	Study hours
+	•	Attendance
+	•	Participation
+	•	Subject-wise scores
+	•	📊 Interactive dashboard with:
+	•	Score comparison charts
+	•	Performance insights
+	•	💡 Personalized recommendations:
+	•	Weak subject detection
+	•	Study improvement suggestions
+
+Installation (local setup):-
+
+Backend(python): 
+
+cd student_backend
+pip install -r requirements.txt
+python app.py
+
+Frontend(react.js):
+
+cd student_frontend
+npm install
+npm start
+
+
