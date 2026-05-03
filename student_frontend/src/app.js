@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
-import { BookOpen, TrendingUp, Award, AlertCircle, ArrowRight, Check, Clock, Users, Target, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react';
+import { BookOpen, TrendingUp, Award, AlertCircle, ArrowRight, Check, Clock, Target, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react';
 
 const globalStyles = `
   @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
