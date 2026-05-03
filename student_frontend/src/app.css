@@ -1,23 +1,116 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-/* Apply Inter font globally and ensure box model is border-box */
+/* ── Base ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f3f4f6; /* Tailwind gray-100 equivalent */
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f4f6;
+
+  /* Smooth scrolling + crisper text rendering */
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Ensure the root element takes up the full viewport height */
 #root {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
-/* Custom fade-in for results */
-.result-box {
-    animation: fadeIn 0.5s ease-out;
+/* ── Reduced-motion respect ───────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+
+/* ── Entrance animations ──────────────────────────── */
+
+/* Your original .result-box — upgraded easing curve */
+.result-box {
+  animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Reusable entrance utilities */
+.animate-fade-up   { animation: fadeInUp   0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-scale-in  { animation: scaleIn    0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+.animate-slide-in  { animation: slideRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-blur-in   { animation: blurIn     0.6s ease-out both; }
+
+/* Stagger children with CSS custom properties */
+.stagger > * { animation-delay: calc(var(--i, 0) * 60ms); }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes blurIn {
+  from { opacity: 0; filter: blur(6px); transform: translateY(8px); }
+  to   { opacity: 1; filter: blur(0);   transform: translateY(0); }
+}
+
+/* ── Hover micro-interactions ─────────────────────── */
+.hover-lift {
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.18s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Loading states ───────────────────────────────── */
+
+/* Skeleton shimmer */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #e5e7eb 25%,
+    #f3f4f6 50%,
+    #e5e7eb 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+/* Bouncing dots loader */
+.loading-dot {
+  animation: bounceDot 1.2s infinite ease-in-out;
+}
+.loading-dot:nth-child(2) { animation-delay: 0.15s; }
+.loading-dot:nth-child(3) { animation-delay: 0.30s; }
+
+@keyframes bounceDot {
+  0%, 80%, 100% { transform: scale(0.7); opacity: 0.4; }
+  40%            { transform: scale(1);   opacity: 1;   }
+}
+
+/* Progress bar fill */
+.progress-fill {
+  animation: fillProgress 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes fillProgress {
+  from { width: 0; }
 }
